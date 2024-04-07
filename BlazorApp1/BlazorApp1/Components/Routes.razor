@@ -1,0 +1,15 @@
+﻿<Router AppAssembly="typeof(Program).Assembly" AdditionalAssemblies="new[] { typeof(Client._Imports).Assembly }">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)">
+            <Authorizing>Authorizing from Routes...</Authorizing>
+        </AuthorizeRouteView>
+        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <CascadingAuthenticationState>
+            <LayoutView Layout="typeof(Layout.MainLayout)">
+                <NotFound />
+            </LayoutView>
+        </CascadingAuthenticationState>
+    </NotFound>
+</Router>
